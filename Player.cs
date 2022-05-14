@@ -2,6 +2,8 @@
 
 public class Player
 {
+    // Player guesses if card will be higher or lower
+    // Returns string
     public string GuessHilo()
     {
         Console.Write("Higher or lower? [h/l] ");
@@ -9,6 +11,8 @@ public class Player
         return guess;
     }
 
+    // Player decieds if they keep playing or not
+    // Returns bool
     public bool KeepPlaying()
     {
         Console.Write("Play again? [y/n]");

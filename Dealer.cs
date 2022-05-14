@@ -19,7 +19,6 @@ public class Dealer
         keepPlaying = true;
         currentCard = _random.Next(13) + 1;
         score = 300;
-        guess = "h";
     }
 
     public void GameLoop()
@@ -36,16 +35,21 @@ public class Dealer
         }
     }
 
+    // Selects a random number between 1 and 13
     private void DrawCard()
     {
         currentCard = _random.Next(13) + 1;
     }
 
+    // Displays current number to user
     private void DisplayCurrentCard()
     {
         Console.WriteLine($"The card is: {currentCard}");
     }
 
+    // Moves currentCard value to oldCard value
+    // Assigns new value to current card
+    // Displays currentCard value to the user
     private void DisplayNextCard()
     {
         oldCard = currentCard;
@@ -53,6 +57,8 @@ public class Dealer
         Console.WriteLine($"Next card was: {currentCard}");
     }
 
+    // Checks if the user guessed high or low correctly
+    // Else the user looses points
     private void CalculateScore()
     {
         if (currentCard > oldCard && guess == "h")
@@ -68,6 +74,7 @@ public class Dealer
         }
     }
 
+    // Displays user score
     private void DisplayScore()
     {
         Console.WriteLine($"Your score is: {score}");
